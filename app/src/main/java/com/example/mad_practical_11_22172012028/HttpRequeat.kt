@@ -32,8 +32,8 @@ class HttpRequest {
         return response
     }
 
-    private fun convertStreamToString(iss : InputStream): String {
-        val reader = BufferedReader(InputStreamReader(iss))
+    private fun convertStreamToString(`is`: InputStream): String {
+        val reader = BufferedReader(InputStreamReader(`is`))
         val sb = StringBuilder()
         var line: String?
         try {
@@ -44,7 +44,7 @@ class HttpRequest {
             e.printStackTrace()
         } finally {
             try {
-                iss.close()
+                `is`.close()
             } catch (e: IOException) {
                 e.printStackTrace()
             }
